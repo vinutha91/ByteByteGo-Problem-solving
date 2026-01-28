@@ -5,3 +5,19 @@ return the indexes of any pair of numbers in the array that sum to the target. T
 
 // Solution 1 - brute force using 2 loops - complexity - O(n2)
 
+const nums = [-5, -2, 3, 4, 6];
+const target = 7;
+const output = [];
+//Output: [2, 3]
+let found  = false;
+
+for(let i=0;i<nums.length;i++){
+  for(let j=1;j<nums.length;j++){
+    if(nums[i] + nums[j] === target && !found){
+      output.push(i);
+      output.push(j);
+      found = true;
+    }
+  }
+}
+console.log(output);
